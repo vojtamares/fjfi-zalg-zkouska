@@ -12,7 +12,8 @@ int main()
 
     std::ifstream file;
 
-    file.open("C:\\Users\\Vojta\\Documents\\FJFI\\ZALG\\zk\\ConsoleAppZKOUSKA\\input.txt");
+    //file.open("C:\\Users\\Vojta\\Documents\\FJFI\\ZALG\\zk\\ConsoleAppZKOUSKA\\input.txt");
+    file.open("input.txt");
 
     if (!file.is_open()) {
         std::cerr << "Soubor nebylo mozne otevrit" << std::endl;
