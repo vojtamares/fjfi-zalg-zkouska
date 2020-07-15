@@ -15,8 +15,6 @@ public:
 
     void appendItem(ListItem* item);
 
-    void swapItems(ListItem* which, ListItem* with);
-
 private:
     ListItem* head;
     ListItem* tail;

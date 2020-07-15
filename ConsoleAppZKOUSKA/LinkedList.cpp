@@ -105,36 +105,6 @@ void LinkedList::sort()
         }
 
         item->swapPayloadWith(minItem); // prohazovanim hodnot nemusim resit prohazovani celych objektu a pointeru, sice porusuji princip immutability objektu, ale jako prakticke reseni resi mnoho okrajovych pripadu "by design", bez velkeho usili
-        //this->swapItems(item, minItem); // reseni s prohazovanim celych objektu v ramci spoj. seznamu
         item = item->getNext();
     }
-}
-
-void LinkedList::swapItems(ListItem* which, ListItem* with)
-{
-    // okrajove pripady, spravne nastaveni, kde seznam zacina a konci
-    // pokud which == head && with == tail, tyto 4 podminky to zvladnou, neni treba specialni podminky navic
-    if (this->head == which) {
-        this->head = with;
-    }
-
-    if (this->tail == which) {
-        this->tail = with;
-    }
-
-    if (this->head == with) {
-        this->head = which;
-    }
-
-    if (this->tail == with) {
-        this->tail = which;
-    }
-
-    ListItem* tmp = which->getPrev();
-    which->setPrev(with->getPrev());
-    with->setPrev(tmp);
-
-    tmp = which->getNext();
-    which->setNext(with->getNext());
-    with->setNext(tmp);
 }
